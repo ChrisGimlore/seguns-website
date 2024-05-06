@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Poster from "../../../../assets/gigposter.png";
 import { useRouter } from "next/navigation";
 import { Json } from "../../data/database.types";
 
@@ -33,6 +32,7 @@ const ShowCard: React.FC<{ show: Show }> = ({ show }) => {
     time_finish,
     venue,
     slug,
+    url,
   } = show;
 
   const router = useRouter();
@@ -46,7 +46,7 @@ const ShowCard: React.FC<{ show: Show }> = ({ show }) => {
         width={200}
         className="rounded-lg flex"
         height={200}
-        src={Poster}
+        src={url}
         alt={title}
       />
       <div className="p-4">
