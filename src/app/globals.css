@@ -31,3 +31,16 @@ body {
     text-wrap: balance;
   }
 }
+
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for WebKit/Blink */
+::-webkit-scrollbar {
+  display: none;
+}
