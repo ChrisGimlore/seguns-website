@@ -8,7 +8,7 @@ const meta = {
   description:
     "Upcoming shows and tour dates for Segun Aniyi - Afrobeats RnB Afropop",
   image: "/assets/segun-love-is-overrated.png",
-  url: "https://segunaniyi.com",
+  url: "https://www.segunaniyi.com",
 };
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   alternates: {
-    canonical: "https://segunaniyi.com/shows",
+    canonical: "https://www.segunaniyi.com/shows",
   },
 };
 

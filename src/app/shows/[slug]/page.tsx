@@ -32,7 +32,7 @@ export async function generateMetadata(
       show.date
     }. Buy tickets here.`,
     image: "/assets/segun-love-is-overrated.png",
-    url: `https://segunaniyi.com/shows/${slug}`,
+    url: `https://www.segunaniyi.com/shows/${slug}`,
   };
 
   // optionally access and extend (rather than replace) parent metadata
@@ -53,7 +53,7 @@ export async function generateMetadata(
       description: meta.description,
     },
     alternates: {
-      canonical: `https://segunaniyi.com/shows/${slug}`,
+      canonical: `https://www.segunaniyi.com/shows/${slug}`,
     },
   };
 }

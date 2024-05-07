@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 const meta = {
   title: "Segun Aniyi | Gallery",
   description: "Gallery of images of Segun Aniyi - Afrobeats RnB Afropop Music",
-  url: "https://segunaniyi.com/gallery",
+  url: "https://www.segunaniyi.com/gallery",
 };
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: meta.description,
   },
   alternates: {
-    canonical: "https://segunaniyi.com/gallery",
+    canonical: "https://www.segunaniyi.com/gallery",
   },
 };
 

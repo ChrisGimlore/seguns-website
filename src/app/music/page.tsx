@@ -10,7 +10,7 @@ const meta = {
   title: "Segun Aniyi | Music",
   description:
     "Music collection and discography of Segun Aniyi - Afrobeats RnB Afropop Music - links to his spotify, apple music, deezer, youtube and more",
-  url: "https://segunaniyi.com/music",
+  url: "https://www.segunaniyi.com/music",
 };
 
 export const metadata: Metadata = {
