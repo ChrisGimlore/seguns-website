@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllShows } from "./lib/shows/getAllShows";
-const websiteHost = process.env.WEBSITE_HOST_URL || "segunaniyi.com";
+const websiteHost =
+  process.env.WEBSITE_HOST_URL || "https://www.segunaniyi.com";
 
 type changeFrequency =
   | "always"
