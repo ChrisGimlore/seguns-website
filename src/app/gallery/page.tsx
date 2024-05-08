@@ -32,13 +32,13 @@ export const metadata: Metadata = {
 const page = async () => {
   const images = await getAllPhotos();
   return (
-    <div className=" flex h-screen w-screen flex-col">
+    <div className=" flex h-screen w-screen flex-col justify-between">
       <Head>
         <title>Segun Aniyi | Gallery</title>
         <meta />
       </Head>
       <div className="uppercase font-serif w-full flex mt-20 text-2xl text-white font-bold justify-center items-center">
-        <h1>Gallery</h1>
+        <h1 className="mt-20">Gallery</h1>
       </div>
       <div className="snap-mandatory sticky mt-10 h-full snap-y items-center flex-col gap-5 flex overflow-scroll ">
         {images.map((image: any, index: number) => (
