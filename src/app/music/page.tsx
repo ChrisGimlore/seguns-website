@@ -50,7 +50,7 @@ const page = async () => {
             </h1>
           </Link>
         </div>
-        <div className="lg:grid lg:grid-cols-2 flex-col gap-10 h-full snap-mandatory w-full overflow-visible items-center justify-center">
+        <div className="lg:grid lg:grid-cols-2 flex-col gap-10 h-full snap-mandatory w-full overflow-scroll items-center justify-center">
           {music.map((song: any) => {
             return (
               <Link
@@ -62,7 +62,7 @@ const page = async () => {
                   <div className="flex items-center justify-center w-full">
                     <div className="md:shrink-0">
                       <Image
-                        className="rounded-full border opacity-50 hover:opacity-100 h-48 w-full place-self-center md:h-full md:w-48 lg:w-full lg:h-200"
+                        className="rounded-full border opacity-50 hover:opacity-100 h-full w-full place-self-center md:h-full md:w-48 lg:w-full lg:h-200"
                         width={300}
                         height={300}
                         alt={song.title}
