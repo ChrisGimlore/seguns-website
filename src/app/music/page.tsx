@@ -50,7 +50,7 @@ const page = async () => {
             </h1>
           </Link>
         </div>
-        <div className="lg:grid lg:grid-cols-2 flex-col gap-10 h-full snap-mandatory w-full overflow-scroll items-center justify-center">
+        <div className="lg:grid lg:grid-cols-2 flex-col gap-10 h-full snap-mandatory w-full overflow-auto items-center justify-center">
           {music.map((song: any) => {
             return (
               <Link
