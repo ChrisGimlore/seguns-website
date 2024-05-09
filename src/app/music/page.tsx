@@ -34,7 +34,7 @@ const page = async () => {
   const music = await getAllMusic();
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center flex-col mt-10">
+    <div className="flex h-screen w-screen items-center justify-center overflow-visible flex-col mt-10">
       <div className="w-full mt-20 items-center justify-center flex">
         <h1 className="uppercase font-serif text-2xl  text-white font-bold ">
           Latest Music
@@ -50,7 +50,7 @@ const page = async () => {
             </h1>
           </Link>
         </div>
-        <div className="lg:grid lg:grid-cols-2 flex-col gap-10 h-full snap-mandatory w-full overflow-auto items-center justify-center">
+        <div className="lg:grid lg:grid-cols-2 flex-col gap-10 h-full snap-mandatory w-full overflow-visible items-center justify-center">
           {music.map((song: any) => {
             return (
               <Link
