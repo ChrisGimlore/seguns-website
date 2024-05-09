@@ -20,7 +20,7 @@ const Hero = () => {
           </Link>
           <Link
             href="/shows"
-            className="font-serif hover:animate-pulse  hover:text-gray-900 px-6 py-3 rounded-full text-lg font-semibold shadow-lg transition duration-300"
+            className="font-serif text-gray-700 hover:animate-pulse  hover:text-gray-800 px-6 py-3 rounded-full text-lg font-semibold shadow-lg transition duration-300"
           >
             Upcoming Tour Dates
           </Link>

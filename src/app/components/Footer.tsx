@@ -39,7 +39,7 @@ const Footer = () => {
             className="rounded-sm border-none outline-none bg-gray-900 text-gray-500 indent-3"
             type="email"
           />
-          <EnvelopeIcon className="h-5 w-5 text-sm text-white" />
+          {/* <EnvelopeIcon className="h-5 w-5 text-sm text-white" /> */}
         </div>
       </form>
 
