@@ -40,12 +40,16 @@ export const metadata: Metadata = {
 const page = async () => {
   const gigs = await getAllShows();
 
+  const styles = {
+    screen: `flex max-w-full flex-col items-center mb-20 h-screen`,
+    container: `flex items-center justify-center w-full mt-20 flex-col max-w-[40%]`,
+    title: `uppercase font-serif text-2xl mt-20 mb-10 text-white font-bold justify-start`,
+  };
+
   return (
-    <div className="flex max-w-full flex-col items-center mb-20 h-screen">
-      <div className="flex items-center justify-center w-full mt-20 flex-col max-w-[40%]">
-        <h1 className="uppercase font-serif text-2xl mt-20 text-white font-bold justify-start">
-          Shows
-        </h1>
+    <div className={styles.screen}>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Shows</h1>
         {gigs.map((show: any, index: any) => {
           return <ShowCard key={index} show={show} />;
         })}

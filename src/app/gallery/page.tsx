@@ -40,21 +40,23 @@ const page = async () => {
       <div className="uppercase font-serif w-full flex mt-20 text-2xl text-white font-bold justify-center items-center">
         <h1 className="mt-20">Gallery</h1>
       </div>
-      <div className="snap-mandatory sticky mt-10 h-full snap-y items-center flex-col gap-5 flex overflow-scroll ">
+      <div className="snap-mandatory sticky mt-10 h-full snap-y items-center flex-col gap-5 flex overflow-scroll">
         {images.map((image: any, index: number) => (
           <div
             key={index}
-            className="snap-start m-3 opacity-50  transition ease-in-out delay-150 hover:opacity-100 duration-300 hover:-translate-y-1 hover:scale-110"
+            className="snap-start md:flex-shrink-0 m-3 opacity-50 relative overflow-visible rounded-md transition ease-in-out delay-150 hover:opacity-100 hover:-translate-y-1 hover:scale-110"
           >
             <Image
-              width={500}
-              height={550}
-              className="rounded-md "
+              width={1000}
+              height={1000}
+              className="rounded-md w-full h-full object-cover sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96"
               alt={image.name}
-              key={image.url}
               src={image.url}
             />
-            <h2 className="uppercase">{image.caption}</h2>
+
+            <div className="absolute inset-0 flex items-center justify-center text-center text-white bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:opacity-100">
+              <h2 className="uppercase">{image.caption}</h2>
+            </div>
           </div>
         ))}
       </div>

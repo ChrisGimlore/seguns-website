@@ -40,36 +40,41 @@ const ShowCard: React.FC<{ show: Show }> = ({ show }) => {
   return (
     <div
       onClick={() => router.push(`/shows/${slug}`)}
-      className="rounded-lg justify-evenly flex m-10 flex-row w-full h-[200px] items-center cursor-pointer hover:animate-pulse"
+      className="max-w-md mx-auto bg-transparent rounded-xl shadow-md overflow-hidden md:max-w-2xl cursor-pointer hover:animate-pulse"
     >
-      <Image
-        width={200}
-        className="rounded-lg flex"
-        height={200}
-        src={url}
-        alt={title}
-      />
-      <div className="p-4">
-        <h3 className="font-semibold text-xl mb-2 uppercase">{title}</h3>
-        <p className="text-gray-700 mb-2">Artist: {artist}</p>
-        <p className="text-gray-700 mb-2">Venue: {venue}</p>
-        {other_artists && (
+      <div className="md:flex">
+        <div className="md:shrink-0">
+          <Image
+            width={200}
+            className="h-48 w-full object-cover md:h-full md:w-48"
+            height={200}
+            src={url}
+            alt={title}
+          />
+        </div>
+
+        <div className="p-4">
+          <h3 className="font-semibold text-xl mb-2 uppercase">{title}</h3>
+          <p className="text-gray-700 mb-2">Artist: {artist}</p>
+          <p className="text-gray-700 mb-2">Venue: {venue}</p>
+          {other_artists && (
+            <p className="text-gray-700 mb-2">
+              Other Artists: {other_artists.join(", ")}
+            </p>
+          )}
           <p className="text-gray-700 mb-2">
-            Other Artists: {other_artists.join(", ")}
+            Date: {new Date(date).toLocaleDateString()}
           </p>
-        )}
-        <p className="text-gray-700 mb-2">
-          Date: {new Date(date).toLocaleDateString()}
-        </p>
-        <p className="text-gray-700 mb-2">
-          {time_start} - {time_finish}
-        </p>
-        <p className="text-gray-700 mb-2">
-          Genres: {genres ? genres.map((tag: any) => tag).join(", ") : ""}
-        </p>
-        <a href={ticket_link} className="text-blue-500 hover:underline">
-          Buy Tickets
-        </a>
+          <p className="text-gray-700 mb-2">
+            {time_start} - {time_finish}
+          </p>
+          <p className="text-gray-700 mb-2">
+            Genres: {genres ? genres.map((tag: any) => tag).join(", ") : ""}
+          </p>
+          <a href={ticket_link} className="text-blue-500 hover:underline">
+            Buy Tickets
+          </a>
+        </div>
       </div>
     </div>
   );

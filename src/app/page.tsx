@@ -4,7 +4,7 @@ import Highlight from "./components/Highlight";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center h-screen justify-between p-20 ">
+    <main className="flex min-h-screen flex-col items-center justify-between p-4 sm:p-20">
       <Head>
         <title>Segun Aniyi | Official</title>
         <meta
@@ -12,7 +12,7 @@ export default function Home() {
           content="Official website for Segun Aniyi - Afrobeats RnB Afropop - Love is overrated"
         />
       </Head>
-      <div className="flex flex-row">
+      <div className="flex flex-col lg:flex-row mt-20">
         <Highlight />
         <Hero />
       </div>

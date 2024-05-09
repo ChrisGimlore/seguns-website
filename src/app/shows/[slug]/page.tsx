@@ -73,6 +73,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
     );
   }
 
+  const styles = {
+    screen: `flex max-w-full flex-col items-center mb-20 h-screen`,
+    container: `flex items-center justify-center w-full mt-20 flex-col max-w-[40%]`,
+  };
+
   const genres = Array.isArray(show.genres) ? show.genres : [];
   // For other_artists
   const otherArtists = Array.isArray(show.other_artists)
@@ -80,49 +85,54 @@ export default async function Page({ params }: { params: { slug: string } }) {
     : [];
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      <div key={result} className="flex flex-row gap-6">
-        <Image
-          alt="result"
-          className="rounded-lg"
-          width={400}
-          height={400}
-          src={show.url || Segun}
-        />
-        <div className="gap-2 flex flex-col">
-          <div className="text-xs text-gray-500">Title:</div>
-          <h1>{result}</h1>
+    <div className={styles.screen}>
+      <div className={styles.container}>
+        <div key={result} className="flex max-w-md mx-auto mt-20 md:max-w-2xl">
+          <div className="md:flex gap-5">
+            <div className="md:shrink-0 mb-5">
+              <Image
+                alt={result}
+                className="rounded-lg h-48 w-full md:h-full md:w-48 lg:w-full lg:h-200"
+                width={200}
+                height={200}
+                src={show.url || Segun}
+              />
+            </div>
+            <div className="gap-2 flex flex-col md:h-full lg:h-full">
+              <div className="text-xs text-gray-500">Title:</div>
+              <h1>{result}</h1>
 
-          <div className="text-xs text-gray-500">Artist:</div>
-          <p>{show.artist}</p>
+              <div className="text-xs text-gray-500">Artist:</div>
+              <p>{show.artist}</p>
 
-          <div className="text-xs text-gray-500">Venue:</div>
-          <p>{show.venue}</p>
+              <div className="text-xs text-gray-500">Venue:</div>
+              <p>{show.venue}</p>
 
-          <div className="text-xs text-gray-500">Address:</div>
-          <p>{show.address}</p>
+              <div className="text-xs text-gray-500">Address:</div>
+              <p>{show.address}</p>
 
-          <div className="text-xs text-gray-500">Date:</div>
-          <p>
-            {show.date
-              ? new Date(show.date).toLocaleDateString()
-              : "Date not available"}
-          </p>
+              <div className="text-xs text-gray-500">Date:</div>
+              <p>
+                {show.date
+                  ? new Date(show.date).toLocaleDateString()
+                  : "Date not available"}
+              </p>
 
-          <div className="text-xs text-gray-500">Time:</div>
-          <p>
-            {show.time_start} - {show.time_finish}
-          </p>
+              <div className="text-xs text-gray-500">Time:</div>
+              <p>
+                {show.time_start} - {show.time_finish}
+              </p>
 
-          <div className="text-xs text-gray-500">Genre:</div>
-          <p>{genres.join(", ")}</p>
+              <div className="text-xs text-gray-500">Genre:</div>
+              <p>{genres.join(", ")}</p>
 
-          <div className="text-xs text-gray-500">Buy Tickets:</div>
-          <Link href={show.ticket_link || "/shows"}>
-            <button className="rounded-lg h-[30px] w-[100px] bg-red-700 text-white hover:bg-gray-800 animate-pulse">
-              Buy Tickets
-            </button>
-          </Link>
+              <Link href={show.ticket_link || "/shows"}>
+                <button className="rounded-lg h-[30px] w-[100px] bg-red-700 text-white hover:bg-gray-800 animate-pulse">
+                  Buy Tickets
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

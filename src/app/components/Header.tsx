@@ -9,7 +9,7 @@ const Header = () => {
   };
 
   return (
-    <div className="top-0 left-0 w-full h-[100px] bg-black shadow-md z-10">
+    <div className="top-0 left-0 relative w-full h-[100px] bg-black shadow-md z-10">
       <div className="flex flex-col items-center py-4">
         <Image alt="logo" width={150} height={75} src={logo} />
         <div className="justify-between flex flex-row w-[80%] text-white">

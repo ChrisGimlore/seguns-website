@@ -35,17 +35,13 @@ const page = async () => {
 
   return (
     <div className="flex h-screen w-screen items-center justify-center flex-col mt-10">
-      <Head>
-        <title>Segun Aniyi | Music</title>
-        <meta />
-      </Head>
       <div className="w-full mt-20 items-center justify-center flex">
         <h1 className="uppercase font-serif text-2xl  text-white font-bold ">
           Latest Music
         </h1>
       </div>
 
-      <div className="flex h-full justify-evenly w-full flex-row overflow-scroll">
+      <div className="flex h-full flex-col lg:justify-evenly w-full lg:flex-col overflow-scroll">
         <div>
           <Highlight />
           <Link href={"https://fanlink.tv/loveisoverrated1"}>
@@ -54,27 +50,36 @@ const page = async () => {
             </h1>
           </Link>
         </div>
-        <div className="grid grid-cols-2 gap-10 items-center justify-center">
+        <div className="lg:grid lg:grid-cols-2 flex-col gap-10 h-full snap-mandatory w-full overflow-visible items-center justify-center">
           {music.map((song: any) => {
             return (
-              <Link href={song.link} key={song.title}>
+              <Link
+                href={song.link}
+                key={song.title}
+                className="items-center justify-center flex m-10 snap-start snap-y"
+              >
                 <div className="relative w-full transition ease-in-out delay-150 hover:opacity-100 duration-300 hover:-translate-y-1 hover:scale-110">
-                  <Image
-                    className="rounded-full border opacity-50 hover:opacity-100 "
-                    width={300}
-                    height={300}
-                    alt={song.title}
-                    src={song.img_url}
-                  />
-                  <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center uppercase text-sm">
-                    {song.title}
-                  </h1>
+                  <div className="flex items-center justify-center w-full">
+                    <div className="md:shrink-0">
+                      <Image
+                        className="rounded-full border opacity-50 hover:opacity-100 h-48 w-full place-self-center md:h-full md:w-48 lg:w-full lg:h-200"
+                        width={300}
+                        height={300}
+                        alt={song.title}
+                        src={song.img_url}
+                      />
+                      <h1 className="absolute inset-0 flex items-center justify-center uppercase text-sm text-white pointer-events-none">
+                        {song.title}
+                      </h1>
+                    </div>
+                  </div>
+
                   {song.other_artists &&
                     song.other_artists.map((artist: string, index: number) => {
                       return (
                         <h1
-                          key={index} // Add a unique key
-                          className="absolute top-3/4 left-1/2  transform -translate-x-1/2 -translate-y-1/2 text-center uppercase text-sm"
+                          key={index}
+                          className="absolute top-full left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center uppercase text-sm md:hidden"
                         >
                           With {artist}
                         </h1>
