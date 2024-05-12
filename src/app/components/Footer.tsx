@@ -27,8 +27,8 @@ const Footer = () => {
   return (
     <footer className="relative flex w-full bottom-0 lg:justify-between flex-col lg:flex-row items-center justify-center">
       <form onSubmit={(e) => addEmail(e)} className="flex p-5 gap-5 w-full">
-        <div className="flex p-5 gap-5 w-full">
-          <h1 className="text-gray-700 text-sm">
+        <div className="flex p-5 gap-5 w-full flex-col lg:flex-row">
+          <h1 className="text-gray-600 text-sm">
             Sign up for the mailing list:
           </h1>
 
@@ -36,7 +36,7 @@ const Footer = () => {
             onChange={(e) => {
               setEmail(e.target.value);
             }}
-            className="rounded-sm border-none outline-none bg-gray-900 text-gray-500 indent-3"
+            className="rounded-sm border-none outline-none bg-gray-800 text-gray-500 indent-3"
             type="email"
           />
           {/* <EnvelopeIcon className="h-5 w-5 text-sm text-white" /> */}
@@ -52,7 +52,7 @@ const Footer = () => {
         </>
       )}
 
-      <div className="flex w-full items-center justify-end">
+      <div className="flex w-full items-center justify-center lg:justify-end">
         <div className="flex justify-between gap-5 p-5 mr-3 h-full items-end">
           <Link href={`https://twitter.com/segunaniyi`}>
             <svg
