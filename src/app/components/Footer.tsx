@@ -25,7 +25,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative flex w-full bottom-0 lg:justify-between flex-col lg:flex-row items-center justify-center">
+    <footer className="flex relative w-full bottom-0 lg:justify-between flex-col lg:flex-row items-center justify-center">
       <form onSubmit={(e) => addEmail(e)} className="flex p-5 gap-5 w-full">
         <div className="flex p-5 gap-5 w-full flex-col lg:flex-row">
           <h1 className="text-gray-600 text-sm">

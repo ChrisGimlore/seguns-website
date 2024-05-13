@@ -40,7 +40,7 @@ const ShowCard: React.FC<{ show: Show }> = ({ show }) => {
   return (
     <div
       onClick={() => router.push(`/shows/${slug}`)}
-      className="max-w-md mx-auto bg-transparent rounded-xl shadow-md overflow-hidden md:max-w-2xl cursor-pointer hover:animate-pulse"
+      className="max-w-md m-5 mx-auto justify-start flex rounded-xl shadow-md overflow-hidden md:max-w-2xl cursor-pointer hover:animate-pulse"
     >
       <div className="md:flex">
         <div className="md:shrink-0">

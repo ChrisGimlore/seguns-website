@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="flex space-x-4">
           <Link
             href="https://fanlink.tv/loveisoverrated1"
-            className="text-red-600 hover:text-red-700 font-serif animate-pulse  px-6 py-3 text-lg font-semibold transition duration-300"
+            className="text-red-600 hover:text-red-700 font-serif animate-pulse  py-3 text-lg font-semibold transition duration-300"
           >
             Listen Now
           </Link>

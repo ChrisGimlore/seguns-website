@@ -41,8 +41,8 @@ const page = async () => {
   const gigs = await getAllShows();
 
   const styles = {
-    screen: `flex max-w-full flex-col items-center mb-20 h-screen`,
-    container: `flex items-center justify-center w-full mt-20 flex-col max-w-[40%]`,
+    screen: `flex max-w-full flex-col items-center mb-20 h-screen overflow-scroll`,
+    container: `flex w-full items-center justify-center mt-20 flex-col  max-w-[40%] overflow-visible`,
     title: `uppercase font-serif text-2xl mt-20 mb-10 text-white font-bold justify-start`,
   };
 
@@ -50,9 +50,18 @@ const page = async () => {
     <div className={styles.screen}>
       <div className={styles.container}>
         <h1 className={styles.title}>Shows</h1>
-        {gigs.map((show: any, index: any) => {
-          return <ShowCard key={index} show={show} />;
-        })}
+        <div className="gap-6 h-full flex-col">
+          {gigs
+            .sort((a, b) => {
+              // Parse dates or use fallback if date is null
+              const dateA = a.date ? new Date(a.date).getTime() : 0;
+              const dateB = b.date ? new Date(b.date).getTime() : 0;
+              return dateB - dateA;
+            })
+            .map((show: any, index: any) => {
+              return <ShowCard key={index} show={show} />;
+            })}
+        </div>
       </div>
     </div>
   );
