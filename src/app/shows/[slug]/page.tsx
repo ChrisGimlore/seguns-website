@@ -100,7 +100,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </div>
             <div className="gap-2 flex flex-col md:h-full lg:h-full">
               <div className="text-xs text-gray-500">Title:</div>
-              <h1>{result}</h1>
+              <h1>{show.caption}</h1>
 
               <div className="text-xs text-gray-500">Artist:</div>
               <p>{show.artist}</p>
