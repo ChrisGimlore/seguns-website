@@ -37,6 +37,9 @@ const ShowCard: React.FC<{ show: Show }> = ({ show }) => {
 
   const router = useRouter();
 
+  // Check if the show is upcoming
+  const isUpcoming = new Date(date) > new Date();
+
   return (
     <div
       onClick={() => router.push(`/shows/${slug}`)}
@@ -71,9 +74,12 @@ const ShowCard: React.FC<{ show: Show }> = ({ show }) => {
           <p className="text-gray-700 mb-2">
             Genres: {genres ? genres.map((tag: any) => tag).join(", ") : ""}
           </p>
-          <a href={ticket_link} className="text-blue-500 hover:underline">
-            Buy Tickets
-          </a>
+          {/* Render Buy Tickets link only if show is upcoming */}
+          {isUpcoming && (
+            <a href={ticket_link} className="text-blue-500 hover:underline">
+              Buy Tickets
+            </a>
+          )}
         </div>
       </div>
     </div>

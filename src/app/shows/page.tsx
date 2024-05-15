@@ -40,6 +40,15 @@ export const metadata: Metadata = {
 const page = async () => {
   const gigs = await getAllShows();
 
+  // Separate upcoming and past shows
+  const now = Date.now();
+  const upcomingShows = gigs.filter(
+    (show) => show.date && new Date(show.date).getTime() > now
+  );
+  const pastShows = gigs.filter(
+    (show) => show.date && new Date(show.date).getTime() <= now
+  );
+
   const styles = {
     screen: `flex max-w-full flex-col items-center mb-20 h-screen overflow-scroll`,
     container: `flex w-full items-center justify-center mt-20 flex-col  max-w-[40%] overflow-visible`,
@@ -51,16 +60,14 @@ const page = async () => {
       <div className={styles.container}>
         <h1 className={styles.title}>Shows</h1>
         <div className="gap-6 h-full flex-col">
-          {gigs
-            .sort((a, b) => {
-              // Parse dates or use fallback if date is null
-              const dateA = a.date ? new Date(a.date).getTime() : 0;
-              const dateB = b.date ? new Date(b.date).getTime() : 0;
-              return dateB - dateA;
-            })
-            .map((show: any, index: any) => {
-              return <ShowCard key={index} show={show} />;
-            })}
+          <h2>Upcoming Shows</h2>
+          {upcomingShows.map((show: any, index: any) => (
+            <ShowCard key={index} show={show} />
+          ))}
+          <h2>Past Shows</h2>
+          {pastShows.map((show: any, index: any) => (
+            <ShowCard key={index} show={show} />
+          ))}
         </div>
       </div>
     </div>

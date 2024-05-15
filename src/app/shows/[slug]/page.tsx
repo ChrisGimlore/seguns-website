@@ -19,7 +19,6 @@ export async function generateMetadata(
   const show: any = gigs.find((gig) => gig.slug === slug);
 
   const genres = Array.isArray(show.genres) ? show.genres : [];
-
   const otherArtists = Array.isArray(show.other_artists)
     ? (show.other_artists as string[])
     : [];
@@ -74,16 +73,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
 
   const styles = {
-    screen: `flex max-w-full flex-col items-center mb-20 h-screen`,
+    screen: `flex max-w-full flex-col items-center mb-20 max-h-full`,
     container: `flex items-center justify-center w-full mt-20 flex-col max-w-[40%]`,
   };
 
   const genres = Array.isArray(show.genres) ? show.genres : [];
-  // For other_artists
+
+  const isUpcoming =
+    show.date !== null ? new Date(show.date) > new Date() : false;
+
   const otherArtists = Array.isArray(show.other_artists)
     ? (show.other_artists as string[])
     : [];
-
   return (
     <div className={styles.screen}>
       <div className={styles.container}>
@@ -92,7 +93,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <div className="md:shrink-0 mb-5">
               <Image
                 alt={result}
-                className="rounded-lg h-48 w-full md:h-full md:w-48 lg:w-full lg:h-200"
+                className="rounded-lg h-full w-full md:h-full md:w-48 lg:w-full lg:h-full"
                 width={200}
                 height={200}
                 src={show.url || Segun}
@@ -100,37 +101,47 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </div>
             <div className="gap-2 flex flex-col md:h-full lg:h-full">
               <div className="text-xs text-gray-500">Title:</div>
-              <h1>{show.caption}</h1>
+              <h1 style={{ whiteSpace: "nowrap" }}>{show.caption}</h1>
 
               <div className="text-xs text-gray-500">Artist:</div>
-              <p>{show.artist}</p>
+              <p style={{ whiteSpace: "nowrap" }}>{show.artist}</p>
+
+              {otherArtists && otherArtists && (
+                <>
+                  <div className="text-xs text-gray-500">Other Artists:</div>
+                  <p style={{ whiteSpace: "nowrap" }}>{show.artist}</p>
+                </>
+              )}
 
               <div className="text-xs text-gray-500">Venue:</div>
-              <p>{show.venue}</p>
+              <p style={{ whiteSpace: "nowrap" }}>{show.venue}</p>
 
               <div className="text-xs text-gray-500">Address:</div>
-              <p>{show.address}</p>
+              <p style={{ whiteSpace: "nowrap" }}>{show.address}</p>
 
               <div className="text-xs text-gray-500">Date:</div>
-              <p>
+              <p style={{ whiteSpace: "nowrap" }}>
                 {show.date
                   ? new Date(show.date).toLocaleDateString()
                   : "Date not available"}
               </p>
 
               <div className="text-xs text-gray-500">Time:</div>
-              <p>
+              <p style={{ whiteSpace: "nowrap" }}>
                 {show.time_start} - {show.time_finish}
               </p>
 
               <div className="text-xs text-gray-500">Genre:</div>
-              <p>{genres.join(", ")}</p>
+              <p style={{ whiteSpace: "nowrap" }}>{genres.join(", ")}</p>
 
-              <Link href={show.ticket_link || "/shows"}>
-                <button className="rounded-lg h-[30px] w-[100px] bg-red-700 text-white hover:bg-gray-800 animate-pulse">
-                  Buy Tickets
-                </button>
-              </Link>
+              {/* Render Buy Tickets button only if show is upcoming */}
+              {isUpcoming && (
+                <Link href={show.ticket_link || "/shows"}>
+                  <button className="rounded-lg h-[30px] w-[100px] bg-red-700 text-white hover:bg-gray-800 animate-pulse">
+                    Buy Tickets
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>

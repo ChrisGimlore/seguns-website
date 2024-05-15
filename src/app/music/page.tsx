@@ -41,8 +41,8 @@ const page = async () => {
         </h1>
       </div>
 
-      <div className="flex h-full flex-col lg:justify-evenly w-full lg:flex-col overflow-scroll">
-        <div>
+      <div className="flex h-full w-full flex-col lg:justify-evenly  lg:flex-row overflow-scroll">
+        <div className="flex flex-col w-full h-full">
           <Highlight />
           <Link href={"https://fanlink.tv/loveisoverrated1"}>
             <h1 className="uppercase place-content-center flex place-self-center font-serif text-sm cursor-pointer underline">
@@ -50,19 +50,19 @@ const page = async () => {
             </h1>
           </Link>
         </div>
-        <div className="lg:grid lg:grid-cols-2 flex-col gap-10 h-full snap-mandatory w-full overflow-visible items-center justify-center">
+        <div className="lg:grid lg:grid-cols-2 flex-col h-full mt-10 snap-mandatory w-full lg:overflow-scroll overflow-visible items-center justify-center">
           {music.map((song: any) => {
             return (
               <Link
                 href={song.link}
                 key={song.title}
-                className="items-center justify-center flex m-10 snap-start snap-y"
+                className="items-center justify-center flex p-10 snap-start snap-y"
               >
-                <div className="relative w-full transition ease-in-out delay-150 hover:opacity-100 duration-300 hover:-translate-y-1 hover:scale-110">
+                <div className="relative  transition ease-in-out delay-150 hover:opacity-100 duration-300 hover:-translate-y-1 hover:scale-110">
                   <div className="flex items-center justify-center w-full">
                     <div className="md:shrink-0">
                       <Image
-                        className="rounded-full border opacity-50 hover:opacity-100 h-full w-full place-self-center md:h-full md:w-48 lg:w-full lg:h-200"
+                        className="rounded-full border opacity-50 hover:opacity-100 h-full max-w-full place-self-center md:h-full md:w-48 lg:w-full lg:h-200"
                         width={300}
                         height={300}
                         alt={song.title}
