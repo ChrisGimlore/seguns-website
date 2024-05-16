@@ -6,10 +6,10 @@ const Hero = () => {
     <div className="bg-cover  py-32 px-8 text-white">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 font-serif">
-          Welcome to the world of Segun Aniyi
+          You feel the pulse, you know the sway,
         </h1>
         <p className="text-lg md:text-xl mb-8 font-serif">
-          Discover the soulful melodies and captivating rhythms of a rising star
+          Welcome to my vibe, let's light up the way. Segun Aniyi.
         </p>
         <div className="flex space-x-4">
           <Link
