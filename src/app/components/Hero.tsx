@@ -6,10 +6,10 @@ const Hero = () => {
     <div className="bg-cover  py-32 px-8 text-white">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 font-serif">
-          You feel the pulse, you know the sway,
+          Segun Aniyi.
         </h1>
         <p className="text-lg md:text-xl mb-8 font-serif">
-          Welcome to my vibe, let's light up the way. Segun Aniyi.
+          Welcome to my space.
         </p>
         <div className="flex space-x-4">
           <Link
