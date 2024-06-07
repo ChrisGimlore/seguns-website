@@ -106,10 +106,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <div className="text-xs text-gray-500">Artist:</div>
               <p style={{ whiteSpace: "nowrap" }}>{show.artist}</p>
 
-              {otherArtists && otherArtists && (
+              {otherArtists && (
                 <>
                   <div className="text-xs text-gray-500">Other Artists:</div>
-                  <p style={{ whiteSpace: "nowrap" }}>{show.artist}</p>
+                  <p style={{ whiteSpace: "nowrap" }}>{otherArtists}</p>
                 </>
               )}
 

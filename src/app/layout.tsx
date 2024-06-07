@@ -16,7 +16,8 @@ const meta = {
 export const metadata: Metadata = {
   title: "Segun Aniyi | Official",
   description:
-    "Official website for Segun Aniyi - Afrobeats, RnB, Afropop, Artist from Lagos, Nigeria. Based in Glasgow, UK.",
+    "Official website for Segun Aniyi Music - Afrobeats, RnB, Afropop, Artist from Lagos, Nigeria. Based in Edinburgh, UK.",
+  metadataBase: new URL("https://www.segunaniyi.com"),
   openGraph: {
     title: meta.title,
     description: meta.description,
